@@ -2,6 +2,10 @@
 
 :root {
   --primary-color: #5c6c79;
+  --primary-color-dark: #c00427;
+  --secondary-color: #15151f;
+  --secondary-color-dark: #0a0b0f;
+  --extra-light: #f8f7fd;
   --text-dark: #242424;
   --text-light: #e2e8f0;
   --white: #ffffff;
@@ -20,6 +24,12 @@
   padding: 5rem 1rem;
 }
 
+.section__subheader {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
 .section__header {
   font-size: 2.2rem;
   font-weight: 700;
@@ -27,12 +37,47 @@
   margin-bottom: 1rem;
 }
 
+.section__description {
+  margin-bottom: 2rem;
+  color: var(--text-light);
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: var(--white);
+  background-color: var(--primary-color);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--primary-color-dark);
+}
+
 img {
   width: 100%;
+  display: flex;
+}
+
+.logo img {
+  max-width: 150px;
 }
 
 a {
   text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -42,25 +87,20 @@ body {
 .header {
   padding-block: 5rem;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("assets/header.PNG");
+    url("assets/header.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
 
 nav {
+  position: fixed;
+  isolation: isolate;
+  top: 0;
+  width: 100%;
   max-width: var(--max-width);
   margin: auto;
-  padding: 2rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav__logo a {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--primary-color);
+  z-index: 9;
 }
 
 .nav__bar {
@@ -73,17 +113,27 @@ nav {
 }
 
 .nav__menu__btn {
-  display: none;
+  font-size: 1.5rem;
+  color: var(--white);
+  cursor: pointer;
 }
 
 .nav__links {
-  font-size: 1.1rem;
-  font-weight: 500;
-  list-style: none;
+  position: absolute;
+  width: 100%;
+  padding: 2rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  margin-top: -8rem;
+  gap: 2rem;
+  background-color: var(--secondary-color);
+  transform: translateY(-100%);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.nav__links.open {
+  transform: translateY(0);
 }
 
 .nav__links a {
@@ -91,57 +141,20 @@ nav {
   transition: 0.3s;
 }
 
-.link {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--white);
-  cursor: pointer;
-}
-
-.nav__icons {
-  display: flex;
-  gap: 2rem;
-}
-
-.nav__icons span {
-  font-size: 1.2rem;
+.nav__links a:hover {
   color: var(--primary-color);
-  cursor: pointer;
-}
-
-.header__container {
-  font-size: 1.8rem;
-  padding-top: 8rem;
-  position: relative;
-}
-
-.header__container img {
-  display: flex;
-  max-width: 1000px;
-  margin-left: auto;
-  border-radius: 5px;
-}
-
-.header__ribbon {
-  position: absolute;
-  top: 50%;
-  left: calc(25rem + -100%);
-  transform: translateY(-50%);
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  background-color: var(--primary-color);
-  border-radius: 5px;
 }
 
 .header__content {
-  max-width: 450px;
-  padding: 2rem 5rem;
-  color: var(--white);
+  max-width: 600px;
 }
 
-.header__content p {
-  color: var(--text-light);
+.header__content h1 {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 4rem;
+  color: var(--white);
 }
 
 .arrow__down {
@@ -220,27 +233,28 @@ nav {
 
 .experience__container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  grid-template-columns: 1fr 1fr; /* Pastikan dua kolom dengan lebar yang sama */
+  gap: 4rem;
+  align-items: start; /* Menyelaraskan item ke bagian atas kolom */
 }
 
 .experience__image img {
-  max-width: 500px;
+  max-width: 100%; /* Pastikan gambar tidak melebihi lebar kolomnya */
   border-radius: 5px;
 }
 
 .experience__description {
-  margin-top: 2rem;
+  margin-top: 0; /* Menghapus margin-top agar tidak ada jarak berlebih di atas deskripsi */
   font-size: 1rem;
   color: var(--primary-color);
 }
 
 .experience__features {
-  margin: 4rem 0;
+  margin-top: 4rem; /* Menambah jarak atas jika diperlukan */
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 3rem;
+  gap: 4rem;
 }
 
 .experience__col h3 {
@@ -265,6 +279,7 @@ nav {
   background-color: var(--white);
   cursor: pointer;
   transition: 0.3s;
+  margin-top: 4rem; 
 }
 
 .experience__content button:hover {
@@ -492,27 +507,10 @@ footer {
   border-top: 1px solid var(--white);
 }
 
-@media (width < 900px) {
-  .benefits__grid {
-    gap: 1rem;
-  }
-
-  .benefits__card {
-    flex-direction: column;
-  }
-
-  .customer__grid {
-    gap: 1rem;
-  }
-
-  .footer__container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (width < 600px) {
-  .nav__links {
-    display: none;
+@media (max-width: 600px) {
+  .header__content h1 {
+    font-size: 4rem;
+    line-height: 5rem;
   }
 
   .header__ribbon {
@@ -536,11 +534,11 @@ footer {
   }
 
   .experience__container {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 2fr; /* Menjadi satu kolom pada layar kecil */
   }
 
   .process__container {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 2fr; /* Menjadi satu kolom pada layar kecil */
   }
 
   .process__image {
@@ -548,11 +546,71 @@ footer {
   }
 
   .customer__grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr; /* Menjadi satu kolom pada layar kecil */
     gap: 1rem;
   }
 
   .footer__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  nav {
+    padding: 2rem 1rem;
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav__bar {
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .nav__menu__btn {
+    display: none;
+  }
+
+  .nav__links {
+    padding: 3rem;
+    width: unset;
+    position: static;
+    transform: none;
+    flex-direction: row;
+    background-color: transparent;
+    margin-top: -5rem;
+  }
+
+  .header {
+    padding-top: 3;
+  }
+
+  .header__content h1 {
+    font-size: 5rem;
+    line-height: 6rem;
+  }
+
+  .benefits__grid {
+    gap: 1rem;
+  }
+
+  .benefits__card {
+    flex-direction: column;
+  }
+
+  .customer__grid {
+    gap: 1rem;
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .price__grid {
     gap: 2rem;
   }
 }
