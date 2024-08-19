@@ -534,11 +534,11 @@ footer {
   }
 
   .experience__container {
-    grid-template-columns: 2fr; /* Menjadi satu kolom pada layar kecil */
+    grid-template-columns: 1fr; /* Menjadi satu kolom pada layar kecil */
   }
 
   .process__container {
-    grid-template-columns: 2fr; /* Menjadi satu kolom pada layar kecil */
+    grid-template-columns: 1fr; /* Menjadi satu kolom pada layar kecil */
   }
 
   .process__image {
