@@ -254,7 +254,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 4rem;
+  gap: 3rem;
 }
 
 .experience__col h3 {
@@ -533,12 +533,16 @@ footer {
     flex-direction: row;
   }
 
+  .experience__features{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
   .experience__container {
-    grid-template-columns: 1fr; /* Menjadi satu kolom pada layar kecil */
+    grid-template-columns: repeat(1, 1fr); /* Menjadi satu kolom pada layar kecil */
   }
 
   .process__container {
-    grid-template-columns: 1fr; /* Menjadi satu kolom pada layar kecil */
+    grid-template-columns: repeat(1, 1fr); /* Menjadi satu kolom pada layar kecil */
   }
 
   .process__image {
