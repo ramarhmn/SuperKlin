@@ -239,7 +239,7 @@ nav {
 }
 
 .experience__image img {
-  max-width: 100%; /* Pastikan gambar tidak melebihi lebar kolomnya */
+  max-width: 500px;
   border-radius: 5px;
 }
 
@@ -254,7 +254,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .experience__col h3 {
@@ -534,6 +534,10 @@ footer {
   }
 
   .experience__features{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .experience__description{
     grid-template-columns: repeat(1, 1fr);
   }
 
