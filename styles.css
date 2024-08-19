@@ -507,6 +507,62 @@ footer {
   border-top: 1px solid var(--white);
 }
 
+@media (max-width: 480px) {
+  .header__content h1 {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+
+  .header__ribbon {
+    background-color: rgba(92, 108, 121, 0.7);
+  }
+
+  .arrow__down {
+    display: none;
+  }
+
+  .benefits__container .section__header {
+    margin-left: 5rem;
+  }
+
+  .benefits__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .benefits__card {
+    flex-direction: row;
+  }
+
+  .experience__features{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .experience__description{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .experience__container {
+    grid-template-columns: repeat(1, 1fr); /* Menjadi satu kolom pada layar kecil */
+  }
+
+  .process__container {
+    grid-template-columns: repeat(1, 1fr); /* Menjadi satu kolom pada layar kecil */
+  }
+
+  .process__image {
+    grid-area: 1/1/2/2;
+  }
+
+  .customer__grid {
+    grid-template-columns: 1fr; /* Menjadi satu kolom pada layar kecil */
+    gap: 1rem;
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 @media (max-width: 600px) {
   .header__content h1 {
     font-size: 4rem;
