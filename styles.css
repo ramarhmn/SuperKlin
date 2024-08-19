@@ -250,15 +250,15 @@ nav {
 }
 
 .experience__features {
-  margin-top: 4rem; /* Menambah jarak atas jika diperlukan */
+  margin-top: 5rem; /* Menambah jarak atas jika diperlukan */
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .experience__col h3 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 600;
   color: var(--primary-color);
 }
@@ -509,7 +509,7 @@ footer {
 
 @media (max-width: 480px) {
   .header__content h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     line-height: 5rem;
   }
 
@@ -534,7 +534,16 @@ footer {
   }
 
   .experience__features{
-    grid-template-columns: repeat(1, 1fr);
+    margin-top: 4rem; /* Menambah jarak atas jika diperlukan */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 0.2rem;
+    gap: 1rem;
+  }
+
+  .experience__images{
+    grid-area: 1/1/2/2;
   }
 
   .experience__description{
@@ -542,11 +551,12 @@ footer {
   }
 
   .experience__container {
-    grid-template-columns: repeat(1, 1fr); /* Menjadi satu kolom pada layar kecil */
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .process__container {
-    grid-template-columns: repeat(1, 1fr); /* Menjadi satu kolom pada layar kecil */
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center; 
   }
 
   .process__image {
@@ -565,7 +575,7 @@ footer {
 
 @media (max-width: 600px) {
   .header__content h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     line-height: 5rem;
   }
 
@@ -598,7 +608,8 @@ footer {
   }
 
   .experience__container {
-    grid-template-columns: repeat(1, 1fr); /* Menjadi satu kolom pada layar kecil */
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
   }
 
   .process__container {
